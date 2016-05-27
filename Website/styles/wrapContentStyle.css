@@ -1,4 +1,3 @@
-@charset "utf-8";
 /* CSS Document */
 
 body{
@@ -40,7 +39,12 @@ a:hover{
 		padding: 0.25em 1em;
 		background-color: #FFFFFF;
 	}
-
+	
+.logo{
+	float: left;
+}
+	
+	
 #textNavigation{
 		float: right;
 		margin-top: 8em;
@@ -53,7 +57,7 @@ a:hover{
 				 
 #textNavigation ul{list-style-type: none;}
 
-#textNavigation li{display: inline;}
+#textNavigation li{display: inline; margin-right: 0.25em}
 		
 #content{
 		overflow: auto;
@@ -65,50 +69,104 @@ a:hover{
 
 #menuNavigation{
 		float: left;
-		width: 25%;
 		height: 400px;
-		padding: 1em;
-		border: solid;
-		border-radius: 10px;
-		background-color: #0093DD;
+		width: 25%;
 		font-weight: bold;
-		font-family: "Comic Sans MS", cursive, sans-serif;
+		font-family: "Comic Sans", cursive, sans-serif;	
+}
+
+#menuNavigation li{
+				list-style-type: none;
+}
+
+ul.mainMenu{
+	height: 400px;
+	padding: 1em;
+	border-style: solid;
+	border-radius: 10px;
+	background-color: #0093DD;
+}
+
+ul.mainMenu li{
+			border: solid #FFFFFF 0.25em; 
+			border-radius:45px;
+			padding: 0.5em;
+			background-color: #FFFFFF;
+			margin-top: 0.75em;
+			margin-right: 2em;
+			width: 250px;
+}
+
+#menuNavigation  a{
+				display: block; 
+				height: 25px;
+				width: 100%;
+				line-height: 30px;
+}
+
+#menuNavigation li:hover{position: relative;}
+
+/*configures subMenu so it is not displayed*/
+ul.subMenu{
+	display:none;
+	padding: 0.5em;
+	border-right: solid #FFFFFF 0.25em;
+	border-radius: 20px;
+	background-color: #FFFFFF;
+}
+
+/*displays the subMenu when mouse hovers over a list item*/
+li:hover .subMenu {
+	border: none;
+	display: block;
+	position: absolute;
+	right: -272px;
+	top: -4px;
+}
+
+ul.subMenu li{
+	border: none;
+	margin: 0;
+	width: 240px;
+}
+
+li:hover .subMenu  .subMenu{
+	display: none;
+}
+
+.subMenu li:hover .subMenu {
+	display: block;
+	position: absolute;
+	right: -170px;
+	top: -5px;
+}
+
+.subMenu ul.subMenu li{
+	border: none;
+	/*margin: 0;*/
+	width: 150px;
+}
+
+.subMenu{
+	font-size: 0.9em;
 	
 }
 
-#menuNavigation a{
-				display: block; 
-				border: solid #FFFFFF 0.1em; 
-				border-radius:45px;
-				box-shadow: 10px 5px 5px;
-				padding: 0.5em;
-				background-color: #FFFFFF;
-				margin-top: 0.75em;
-				margin-right: 4em;
-}
-
-#menuNavigation a:hover{
-			border: solid #FFFFFF 0.1em; 
-			border-radius:45px;
-			box-shadow: 5px;
-}
-
-#menuNavigation li{display: block;}
-
 #thumbnails{
-			float: left;
-			height: 400px;
-			width: 10%;
-			margin-left: 1.5em;
-			padding: 0.25em 0em 0.25em 0.75em;
-		}
+			height: 425px;
+			overflow: auto;
+			margin-top: 0.25em;
+			text-align: right;
+}
 		
 #thumbnails ul{
 			list-style-type: none;
-			overflow: auto;
+			margin-top: 1em;
+			padding-right: 1em;
+			
 }
 
-#thumbnails li{display: block; margin-top: 1em;}
+#thumbnails li{display: block; margin-bottom: 1em;}
 
 #information{
 	float: right;
@@ -122,19 +180,11 @@ a:hover{
 	color: #FFFFFF;
 }
 
-#information img{
-			text-align: center;
-}
-
 #footer{
 	overflow: auto;
 	padding: 0em 1em 1em;
 	background-color: #FFFFFF;
 }	
-
-.logo{
-	float: left;
-}
 
 .disclaimer{
 	float: left;
@@ -149,15 +199,19 @@ a:hover{
 	font-variant: small-caps;
 	font-weight: bold;
 }
-
-
-			
+		
 /*configures the message for under construction page*/
 .construction{
 				font-style: oblique; 
 				font-size: 1.25em;
 				text-align: center;
+				color: #FFFFFF;
 			}
+			
+.construction h1{
+				color: #000000;
+				text-align: left;
+}
 
 .photo{
 	text-align: center;
